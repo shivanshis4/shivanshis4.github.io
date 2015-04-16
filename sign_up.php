@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="shortcut icon" href="img/Zerode-Plump-Document-help (1).ico"/>
+<link rel="shortcut icon" href="img/question-button.gif"/>
+
 <title>SiGn Up</title>
 </head>
 

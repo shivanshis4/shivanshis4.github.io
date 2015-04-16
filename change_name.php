@@ -5,8 +5,8 @@ session_start();
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><link rel="shortcut icon" href="img/question-button.gif"/>
+<title>Question_paper_Manager</title>
 </head>
 
 <body>
@@ -46,18 +46,12 @@ if(isset($_REQUEST['ok']))
    
 	$query = "RENAME TABLE `$name`  TO `$new_name`"; 
 	
-     echo " You cannot rename this table ";
-	 die();
-  }
   $sql="UPDATE user SET user = '$new_name' WHERE user = '$name'" ;
 	
-    if(!(mysql_query($sql,$connect)))
+    if(!(mysql_query($sql,$connect) && mysql_query($query,$connect)))
   {
-     if(!(mysql_query($query,$connect)))
-	{
-		echo " The UserName or Mail Address already in use ";
+    	echo " The UserName or Mail Address already in use ";
 	 	die();
-	}
   }
   $_SESSION['name']=$new_name;
   echo "<font color='green'><b><br/>Your name is Successfully Changed.</b></font><a href='settings.php'>Go Back to setting Page</a>";

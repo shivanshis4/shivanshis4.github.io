@@ -5,8 +5,8 @@ session_start();
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><link rel="shortcut icon" href="img/question-button.gif"/>
+<title>Question_paper_Manager</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@ include('essential.html');
 <b><br/><h1><form name="sub" action="add_sub.php" method="post"><br/>
 <b>Enter new subject : </b><input type="text" name="sub" size="30" />
 <br/><br/><input type="submit" name="ok" value="Add Subject" /><br />
-
+<a style="position:absolute; top:2%; left:65%;" href="manage_subjects.php"><small><< previous page</small></a>
 <?php
 if(isset($_REQUEST['ok']))
 {
@@ -56,7 +56,7 @@ if(isset($_REQUEST['ok']))
 	echo "<h6> Subject Added Successfully!!!</h6>";
 }?><br/>
 
-</form><a style="position:absolute; top:2%; left:65%;" href="manage_subjects.php"><small><< previous page</small></a><br />
+</form><br />
 <br /></h1></b>
 
 

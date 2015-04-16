@@ -5,8 +5,8 @@ session_start();
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><link rel="shortcut icon" href="img/question-button.gif"/>
+<title>Question_paper_Manager</title>
 </head>
 
 <body background="img/questions.jpg"><center>
@@ -37,13 +37,13 @@ $mail->SMTPSecure = 'ssl';
 $n=rand(1,999999);
 $_SESSION['name']=$_REQUEST['mail'];
 $_SESSION['code']=$n;
-$mail->Username = "ur_mail_here";
-$mail->Password = "ur_oassword_here";
+$mail->Username = "ur_gmail_ID";
+$mail->Password = "ur_password";
  
 $mail->IsHTML(true); // if you are going to send HTML formatted emails
 $mail->SingleTo = true; // if you want to send a same email to multiple users. multiple emails will be sent one-by-one.
  
-$mail->From = "ss4cca@gmail.com";
+$mail->From = "ur_gmail_ID";
 $mail->FromName = "Question Paper Manager";
  
 $mail->addAddress($user,"User");

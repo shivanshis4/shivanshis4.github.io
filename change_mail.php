@@ -7,8 +7,8 @@ session_start();
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><link rel="shortcut icon" href="img/question-button.gif"/>
+<title>Question_paper_Manager</title>
 </head>
 
 <body>
@@ -46,13 +46,20 @@ if(isset($_REQUEST['ok']))
 	 $connect=mysql_connect("localhost","root","");
 	  mysql_select_db("qpm");
     $sql="UPDATE user SET mail = '$new_mail' WHERE mail = '$mail'" ;
-	$_SESSION['mail']=$new_mail;
- 
-  if(!(mysql_query($sql,$connect)))
+	if(!(mysql_query($sql,$connect)))
   {
      echo " The UserName or Mail Address already in use ";
 	 die();
   }
+  $chk="select subject from subjects where mail='$mail'";
+  $chk=mysql_query($chk);
+  while($row = mysql_fetch_array($chk))
+	 {
+	$update="UPDATE subjects SET mail = '$new_mail' WHERE mail = '$mail'" ;
+		$update=mysql_query($update);
+	 }
+  
+  $_SESSION['mail']=$new_mail;
   echo "<font color='green'><b><br/>Your Mail Address is Successfully Changed.</b></font><a href='settings.php'>Go Back to setting Page</a>";
   
 

@@ -4,8 +4,8 @@ session_start();
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><link rel="shortcut icon" href="img/question-button.gif"/>
+<title>Question_paper_Manager</title>
 </head>
 
 <body>
@@ -13,7 +13,7 @@ session_start();
 include('essential.html');
 ?>
 
-<center><font color="#000033"><div style=" border:inset; position:absolute; left:25%; top:30%; right:30%; bottom:25%; background-color:#FF9966"><br/>
+<center><font color="#000000"><div style=" border:inset; position:absolute; left:25%; top:30%; right:30%; bottom:25%; background-color:#FF9966"><br/>
 <b><br/><h1><form name="del_sub" action="del_sub.php" method="post"><br/>
 <b>Select subject to be deleted : </b>
 <?php
@@ -32,7 +32,7 @@ include('essential.html');
 	 echo "</select>";
 ?>
 
-
+<a style="position:absolute; top:2%; left:65%;" href="manage_subjects.php"><small><< previous page</small></a>
 <br/><br/><input type="submit" name="ok" value="~~~Delete~~~" /><br />
 <?php
 
@@ -47,11 +47,12 @@ include('essential.html');
      echo "<h6> Something Went Wrong..</h6> ";
 	 die();
   	}
-		
 	
 	header('Location:del_sub.php');
+	//echo "<h6> Subject deleted Successfully!!!</h6>";
 	mysql_close();
 	}
-?>
+?></form><br />
+<br /></h1></b></div></font></center>
 </body>
 </html>
